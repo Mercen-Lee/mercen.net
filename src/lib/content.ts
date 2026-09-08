@@ -15,13 +15,14 @@ const curatedProjectTitles = [
   'DodamDodam',
   'Love & Code',
   'Allermi',
-  'Desktop Fushi',
-  'Windows 11 for Galaxy Tab 6 Lite',
+  'Tamaloid',
+  'AMAZE Paint',
   'App Pilot',
   'Allergist',
+  'Desktop Fushi',
+  'Windows 11 for Galaxy Tab 6 Lite',
   'FlowKit',
   'Story',
-  'Amaze',
 ] as const;
 
 export type LinkItem = {

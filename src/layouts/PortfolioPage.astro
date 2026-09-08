@@ -104,6 +104,11 @@ const personalGalleryImages = ui.galleryItems
 
 const projectGroups = [
   {
+    kind: 'personal',
+    title: ui.projectGroups.personal,
+    projects: portfolio.projects.filter((project) => project.kind === 'personal'),
+  },
+  {
     kind: 'company',
     title: ui.projectGroups.company,
     projects: portfolio.projects.filter((project) => project.kind === 'company'),
@@ -112,11 +117,6 @@ const projectGroups = [
     kind: 'team',
     title: ui.projectGroups.team,
     projects: portfolio.projects.filter((project) => project.kind === 'team'),
-  },
-  {
-    kind: 'personal',
-    title: ui.projectGroups.personal,
-    projects: portfolio.projects.filter((project) => project.kind === 'personal'),
   },
 ].filter((group) => group.projects.length > 0);
 
@@ -502,26 +502,6 @@ function emailHref(value: string): string {
         </div>
       </section>
 
-      <section id="awards" class="section-shell" data-nav-section>
-        <div class="section-heading reveal">
-          <h2>{ui.sections.awards}</h2>
-        </div>
-        <div class="credential-list" aria-label={ui.awardsListLabel}>
-          {portfolio.awards.map((award) => (
-            <article id={award.id} class="credential-row reveal" data-highlight-target>
-              <time class="credential-date">{award.date}</time>
-              <div class="credential-main">
-                <img class="list-icon" src={iconForAward(award).src} alt="" loading="lazy" decoding="async" />
-                <div>
-                  <h3>{award.name}</h3>
-                  {award.level && <span class="credential-detail">{award.level}</span>}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="projects" class="section-shell" data-nav-section>
         <div class="section-heading reveal">
           <h2>{ui.sections.projects}</h2>
@@ -676,6 +656,26 @@ function emailHref(value: string): string {
                 })}
               </div>
             </section>
+          ))}
+        </div>
+      </section>
+
+      <section id="awards" class="section-shell" data-nav-section>
+        <div class="section-heading reveal">
+          <h2>{ui.sections.awards}</h2>
+        </div>
+        <div class="credential-list" aria-label={ui.awardsListLabel}>
+          {portfolio.awards.map((award) => (
+            <article id={award.id} class="credential-row reveal" data-highlight-target>
+              <time class="credential-date">{award.date}</time>
+              <div class="credential-main">
+                <img class="list-icon" src={iconForAward(award).src} alt="" loading="lazy" decoding="async" />
+                <div>
+                  <h3>{award.name}</h3>
+                  {award.level && <span class="credential-detail">{award.level}</span>}
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </section>
